@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvw4nb2prr1uh"]
+
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="1_me6n3"]
+[ext_resource type="Script" uid="uid://db8olh60d5iuy" path="res://player_L/area_2d_b.gd" id="2_uopyf"]
+[ext_resource type="Texture2D" uid="uid://chxuolme0555l" path="res://assete/planet6.png" id="4_jp3gj"]
+[ext_resource type="PackedScene" uid="uid://de2xi6igun3ud" path="res://player/area_2d.tscn" id="5_cj1ju"]
+[ext_resource type="PackedScene" uid="uid://dk5rkaqslnylf" path="res://game_a_s.tscn" id="6_qu5x2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5tg0"]
+radius = 20.726606
+
+[node name="Game_1" type="Node2D"]
+
+[node name="BackgroundPurple" type="Sprite2D" parent="."]
+position = Vector2(199.49998, 300)
+scale = Vector2(0.9974999, 1.5)
+texture = ExtResource("1_me6n3")
+
+[node name="Area2D_B" type="Area2D" parent="."]
+position = Vector2(1, 0)
+script = ExtResource("2_uopyf")
+
+[node name="CollisionShape2D _P3" type="CollisionShape2D" parent="Area2D_B"]
+position = Vector2(33.000004, 63)
+scale = Vector2(1.4, 1.4)
+shape = SubResource("CircleShape2D_h5tg0")
+
+[node name="Planet6" type="Sprite2D" parent="Area2D_B/CollisionShape2D _P3"]
+position = Vector2(0, 2.861023e-06)
+scale = Vector2(0.7142857, 0.7142857)
+texture = ExtResource("4_jp3gj")
+
+[node name="Area2D_p" parent="." instance=ExtResource("5_cj1ju")]
+position = Vector2(200, 522)
+
+[node name="Node_k" type="Node" parent="."]
+
+[node name="Game_A_S" parent="." instance=ExtResource("6_qu5x2")]
+
+[connection signal="area_entered" from="Area2D_B" to="Area2D_B" method="_on_area_entered"]
+[connection signal="area_entered" from="Area2D_p" to="Area2D_p" method="_on_area_entered"]

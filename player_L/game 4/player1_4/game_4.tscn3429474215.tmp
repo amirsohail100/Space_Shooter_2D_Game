@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://sanx8eukeg4h"]
+
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="1_jt2ai"]
+[ext_resource type="PackedScene" uid="uid://c7qorwu8pobki" path="res://player_L/game 4/player1_4/game_p_1.tscn" id="2_nytew"]
+[ext_resource type="PackedScene" uid="uid://c5dre4u5vetmq" path="res://player_L/game 4/player1_4/game_p_2.tscn" id="3_rervm"]
+[ext_resource type="Texture2D" uid="uid://bgiy3g4pptdvl" path="res://assete/horizontal_bar_blue.png" id="4_v37jp"]
+[ext_resource type="PackedScene" uid="uid://ck21cp8tbb34l" path="res://player_L/game 4/player1_4/node_e_s_B.tscn" id="5_1udck"]
+[ext_resource type="Script" uid="uid://bkt5x6h7kfx78" path="res://player_L/game 4/player1_4/node_e_s_b.gd" id="6_opan7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aut6"]
+size = Vector2(400, 8)
+
+[node name="Game_3" type="Node2D"]
+
+[node name="BackgroundBlue" type="Sprite2D" parent="."]
+position = Vector2(200, 300.00003)
+scale = Vector2(1, 1.5000001)
+texture = ExtResource("1_jt2ai")
+
+[node name="Game_P1" parent="." instance=ExtResource("2_nytew")]
+position = Vector2(159, 545)
+
+[node name="Game_p2" parent="." instance=ExtResource("3_rervm")]
+position = Vector2(241, 545)
+
+[node name="Area2D_B" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_B"]
+position = Vector2(200, 495)
+shape = SubResource("RectangleShape2D_1aut6")
+
+[node name="HorizontalBarBlue1" type="Sprite2D" parent="Area2D_B"]
+position = Vector2(200, 495)
+scale = Vector2(3.0769231, 0.799997)
+texture = ExtResource("4_v37jp")
+
+[node name="Node_MO" type="Node" parent="."]
+
+[node name="Node_AM4" type="Node" parent="."]
+
+[node name="Node_E_S" parent="." instance=ExtResource("5_1udck")]
+script = ExtResource("6_opan7")

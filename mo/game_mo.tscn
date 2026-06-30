@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bye4km3tf0wpe"]
+
+[ext_resource type="Script" uid="uid://b0b0wyx6nusf1" path="res://mo/game_mo.gd" id="1_33q0a"]
+[ext_resource type="Texture2D" uid="uid://dhqbn4ufqxfa8" path="res://assete/pixel_laser_blue.png" id="2_nlq4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iupl7"]
+size = Vector2(10, 30.000015)
+
+[node name="Game_MO" type="Node2D"]
+script = ExtResource("1_33q0a")
+
+[node name="PixelLaserBlue" type="Sprite2D" parent="."]
+position = Vector2(0, 1.0000012)
+scale = Vector2(0.4, 0.39999998)
+texture = ExtResource("2_nlq4d")
+
+[node name="Area2D_MO" type="Area2D" parent="."]
+scale = Vector2(0.4, 0.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_MO"]
+position = Vector2(0, 1.4305101e-06)
+scale = Vector2(0.9999992, 0.9999992)
+shape = SubResource("RectangleShape2D_iupl7")

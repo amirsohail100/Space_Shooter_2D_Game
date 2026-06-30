@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://de2xi6igun3ud"]
+
+[ext_resource type="Script" uid="uid://bq4awpcsihaxa" path="res://player/area_2d.gd" id="1_dl81w"]
+[ext_resource type="Texture2D" uid="uid://dcn66rvw4vhys" path="res://assete/pixel_ship_blue.png" id="2_5rgpn"]
+
+[node name="Area2D_p" type="Area2D"]
+script = ExtResource("1_dl81w")
+
+[node name="PixelShipBlue" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_5rgpn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.235765, 1.311056e-06)
+scale = Vector2(0.40248433, 0.40618548)
+polygon = PackedVector2Array(0, -35, -40, 27, 40.338875, 27.08122)

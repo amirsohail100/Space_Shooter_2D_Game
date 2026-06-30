@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3 uid="uid://deuk6r3axvagj"]
+
+[ext_resource type="Script" uid="uid://caxjcy4e2fexm" path="res://folder_C/control_w_4.gd" id="1_vlhk4"]
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="2_hcnee"]
+[ext_resource type="FontFile" uid="uid://c84rxcejuvm7x" path="res://folder_text/Pixel-Regular.ttf" id="3_rgvey"]
+[ext_resource type="Texture2D" uid="uid://dcn66rvw4vhys" path="res://assete/pixel_ship_blue.png" id="3_vn71y"]
+[ext_resource type="Texture2D" uid="uid://dxyfaw8c3umy3" path="res://assete/pixel_ship_red.png" id="4_pawyo"]
+[ext_resource type="Texture2D" uid="uid://bia1h1802xi1h" path="res://assete/pixel_laser_red.png" id="5_rgvey"]
+[ext_resource type="Texture2D" uid="uid://dhqbn4ufqxfa8" path="res://assete/pixel_laser_blue.png" id="6_6i2o7"]
+[ext_resource type="Texture2D" uid="uid://dxkgifj75kfiu" path="res://assete/pixel_station_red.png" id="7_tla8j"]
+[ext_resource type="Texture2D" uid="uid://c772faxr81yqd" path="res://assete/pixel_station_blue.png" id="8_noak5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pf8ys"]
+texture = ExtResource("2_hcnee")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx1tg"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_illpt"]
+bg_color = Color(0.7274283, 0.7274284, 0.7274283, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olivv"]
+bg_color = Color(0.6941206, 0.6941206, 0.6941205, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toy2d"]
+
+[node name="Control_W" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlhk4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pf8ys")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = 29.0
+offset_right = 87.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button11" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rgvey")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mx1tg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_illpt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_olivv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_toy2d")
+text = "Next"
+
+[node name="Button12" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rgvey")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mx1tg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_illpt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_olivv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_toy2d")
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.5
+offset_top = -121.0
+offset_right = 116.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_rgvey")
+theme_override_font_sizes/font_size = 40
+text = "You Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PixelShipBlue" type="Sprite2D" parent="."]
+position = Vector2(159.00002, 169.00002)
+rotation = -6.2831855
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_vn71y")
+
+[node name="PixelShipRed" type="Sprite2D" parent="."]
+position = Vector2(227.00002, 169)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_pawyo")
+
+[node name="PixelLaserRed" type="Sprite2D" parent="."]
+position = Vector2(229, 108.00001)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_rgvey")
+
+[node name="PixelLaserBlue" type="Sprite2D" parent="."]
+position = Vector2(160, 108.00001)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_6i2o7")
+
+[node name="PixelStationRed" type="Sprite2D" parent="."]
+position = Vector2(230, 46)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_tla8j")
+
+[node name="PixelStationBlue" type="Sprite2D" parent="."]
+position = Vector2(161, 46)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_noak5")
+
+[connection signal="pressed" from="VBoxContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button12" to="." method="_on_button_12_pressed"]

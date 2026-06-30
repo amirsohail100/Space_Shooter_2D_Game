@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7n701q2aracs"]
+
+[ext_resource type="Script" uid="uid://bdc3ljlthrch4" path="res://player_L/game 4/player1_4/game_a_4_b.gd" id="1_3ene8"]
+[ext_resource type="Texture2D" uid="uid://c772faxr81yqd" path="res://assete/pixel_station_blue.png" id="2_3ene8"]
+
+[node name="Area2D_p_B" type="Area2D"]
+script = ExtResource("1_3ene8")
+
+[node name="PixelStationBlue" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_3ene8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 32, 13, 19, 22, -15, 0, -33, -22, -15, -13, 19)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

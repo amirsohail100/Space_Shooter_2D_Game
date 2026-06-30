@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddcaupr4xum2s"]
+
+[ext_resource type="Script" uid="uid://d05bs87w4tghh" path="res://player_L/game 5/player1_5/game_p_2.gd" id="1_c4d30"]
+[ext_resource type="Texture2D" uid="uid://dxyfaw8c3umy3" path="res://assete/pixel_ship_red.png" id="2_2rpwx"]
+
+[node name="Game_p2" type="Node2D"]
+script = ExtResource("1_c4d30")
+
+[node name="Area2D_P2" type="Area2D" parent="."]
+
+[node name="PixelShipRed" type="Sprite2D" parent="Area2D_P2"]
+position = Vector2(1.9073486e-06, 3.8146973e-06)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_2rpwx")
+
+[node name="Camera2D" type="Camera2D" parent="Area2D_P2"]
+zoom = Vector2(1.2, 1.2)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_P2"]
+polygon = PackedVector2Array(0, -14, -4, -14, -4, -2, -8, -2, -8, 6, -16, 6, -16, 14, -4, 14, -4, 18, 4, 18, 4, 14, 16, 14, 16, 6, 8, 6, 8, -2, 4, -2, 4, -14)

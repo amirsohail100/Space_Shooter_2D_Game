@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcmogkclcrm2r"]
+
+[ext_resource type="PackedScene" uid="uid://d0iywb238eyvh" path="res://enamy/node_e_s.tscn" id="1_7iuqb"]
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="1_72v43"]
+[ext_resource type="Script" uid="uid://dn7ulis21ss2c" path="res://enamy/node_e_s.gd" id="2_cc3i7"]
+[ext_resource type="PackedScene" uid="uid://cctt16xinpc3a" path="res://player/game_p.tscn" id="2_ncqv8"]
+[ext_resource type="Texture2D" uid="uid://bgiy3g4pptdvl" path="res://assete/horizontal_bar_blue.png" id="4_eenna"]
+[ext_resource type="PackedScene" uid="uid://b215ammb1xx7u" path="res://enamy/area_2d_W.tscn" id="4_puh7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aut6"]
+size = Vector2(400, 8)
+
+[node name="Game_2" type="Node2D"]
+
+[node name="BackgroundBlue" type="Sprite2D" parent="."]
+position = Vector2(200, 300.00003)
+scale = Vector2(1, 1.5000001)
+texture = ExtResource("1_72v43")
+
+[node name="Game_p" parent="." instance=ExtResource("2_ncqv8")]
+position = Vector2(200, 545)
+
+[node name="Area2D_B" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_B"]
+position = Vector2(200, 495)
+shape = SubResource("RectangleShape2D_1aut6")
+
+[node name="HorizontalBarBlue" type="Sprite2D" parent="Area2D_B"]
+position = Vector2(199.99998, 495)
+scale = Vector2(3.076923, 0.799997)
+texture = ExtResource("4_eenna")
+
+[node name="Area2D" parent="Area2D_B" instance=ExtResource("4_puh7d")]
+
+[node name="Node_MO" type="Node" parent="."]
+
+[node name="Node_AM" type="Node" parent="."]
+
+[node name="Node_E_S" parent="." instance=ExtResource("1_7iuqb")]
+script = ExtResource("2_cc3i7")

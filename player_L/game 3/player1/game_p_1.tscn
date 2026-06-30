@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://p4xb3ojek6dk"]
+
+[ext_resource type="Script" uid="uid://bmymx1cvk7qqg" path="res://player_L/game 3/player1/game_p_1.gd" id="1_0c5ii"]
+[ext_resource type="Texture2D" uid="uid://dcn66rvw4vhys" path="res://assete/pixel_ship_blue.png" id="2_hmvaq"]
+
+[node name="Game_P1" type="Node2D"]
+script = ExtResource("1_0c5ii")
+
+[node name="PixelShipBlue" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_hmvaq")
+
+[node name="Area2D_B1" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_B1"]
+polygon = PackedVector2Array(0, -14, -16, 10, 16, 10)

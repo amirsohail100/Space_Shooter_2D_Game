@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwwac115hmtw"]
+
+[ext_resource type="Script" uid="uid://dqr5m1q4mltm" path="res://folder_C_D/control_d_2.gd" id="1_smrjg"]
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="2_inxfc"]
+[ext_resource type="FontFile" uid="uid://c84rxcejuvm7x" path="res://folder_text/Pixel-Regular.ttf" id="3_grlg3"]
+[ext_resource type="Texture2D" uid="uid://dcn66rvw4vhys" path="res://assete/pixel_ship_blue.png" id="3_u38cn"]
+[ext_resource type="Texture2D" uid="uid://bgiy3g4pptdvl" path="res://assete/horizontal_bar_blue.png" id="4_u38cn"]
+[ext_resource type="Texture2D" uid="uid://dxyfaw8c3umy3" path="res://assete/pixel_ship_red.png" id="5_grlg3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6or6g"]
+texture = ExtResource("2_inxfc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rxxd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ffko"]
+bg_color = Color(0.7274283, 0.7274284, 0.7274283, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6or6g"]
+bg_color = Color(0.6941206, 0.6941206, 0.6941205, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxbgk"]
+
+[node name="Control_D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smrjg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6or6g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = 29.0
+offset_right = 87.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button01" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_grlg3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rxxd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ffko")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6or6g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bxbgk")
+text = "Restart"
+
+[node name="Button02" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_grlg3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4rxxd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ffko")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6or6g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bxbgk")
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.5
+offset_top = -123.0
+offset_right = 116.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_grlg3")
+theme_override_font_sizes/font_size = 40
+text = "You Dead"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PixelShipBlue" type="Sprite2D" parent="."]
+position = Vector2(192.00002, 163)
+rotation = -6.2831855
+scale = Vector2(0.46891674, 0.46891674)
+texture = ExtResource("3_u38cn")
+
+[node name="HorizontalBarBlue" type="Sprite2D" parent="."]
+position = Vector2(196, 102)
+texture = ExtResource("4_u38cn")
+
+[node name="PixelShipRed" type="Sprite2D" parent="."]
+position = Vector2(215, 106.99999)
+rotation = -3.1415927
+scale = Vector2(0.469, 0.469)
+texture = ExtResource("5_grlg3")
+
+[connection signal="pressed" from="VBoxContainer/Button01" to="." method="_on_button_01_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button02" to="." method="_on_button_02_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://f7p8yolw6hqv"]
+
+[ext_resource type="Texture2D" uid="uid://dxyfaw8c3umy3" path="res://assete/pixel_ship_red.png" id="1_0emed"]
+[ext_resource type="Script" uid="uid://cjjq8if68f8ll" path="res://player_L/game 3/player1/game_p_2.gd" id="1_6m0y3"]
+[ext_resource type="PackedScene" uid="uid://ctvuevltq7kwa" path="res://player_L/game 5/player1_5/node_e_s_B_5.tscn" id="3_exl5s"]
+
+[node name="Game_p2" type="Node2D"]
+script = ExtResource("1_6m0y3")
+
+[node name="PixelShipRed" type="Sprite2D" parent="."]
+position = Vector2(1.9073486e-06, 3.8146973e-06)
+rotation = 3.1415927
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_0emed")
+
+[node name="Area2D_R1" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_R1"]
+rotation = 3.1415927
+polygon = PackedVector2Array(0, -14, -16, 10, 16, 10)
+
+[node name="Node_E_S" parent="." instance=ExtResource("3_exl5s")]

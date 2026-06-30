@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://lfmuvxapobaa"]
+
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="1_26yyk"]
+[ext_resource type="Script" uid="uid://dh4qe4wkb5oxu" path="res://player_L/game 5/player1_5/area_2d_d_b.gd" id="2_gcqt2"]
+[ext_resource type="PackedScene" uid="uid://dpglwxvu0mkpe" path="res://player_L/game 5/player1_5/game_p_1.tscn" id="3_dv5am"]
+[ext_resource type="PackedScene" uid="uid://ddcaupr4xum2s" path="res://player_L/game 5/player1_5/game_p_2.tscn" id="4_o6x6m"]
+[ext_resource type="PackedScene" uid="uid://b0mxgiejp405w" path="res://player_L/game 5/player1_5/node_e_s_B_5.tscn" id="5_dv5am"]
+[ext_resource type="Script" uid="uid://m8gho7fw54hv" path="res://player_L/game 5/player1_5/node_e_s_b_5.gd" id="6_o6x6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ci6w"]
+size = Vector2(403.5616, 3.8994026)
+
+[node name="Game_5" type="Node2D"]
+
+[node name="BackgroundBlue" type="Sprite2D" parent="."]
+position = Vector2(188.99998, -739.4999)
+scale = Vector2(1.8250002, 8.2775)
+texture = ExtResource("1_26yyk")
+
+[node name="Area2D_D_B" type="Area2D" parent="BackgroundBlue"]
+script = ExtResource("2_gcqt2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundBlue/Area2D_D_B"]
+position = Vector2(-2.8767014, -170.29756)
+scale = Vector2(1, 0.9999998)
+shape = SubResource("RectangleShape2D_8ci6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundBlue/Area2D_D_B"]
+position = Vector2(7.1525574e-06, 174.91287)
+shape = SubResource("RectangleShape2D_8ci6w")
+
+[node name="Game_P1" parent="." instance=ExtResource("3_dv5am")]
+position = Vector2(159, 545)
+
+[node name="Game_p2" parent="." instance=ExtResource("4_o6x6m")]
+position = Vector2(241, 545)
+
+[node name="Node_MO" type="Node" parent="."]
+
+[node name="Node_AM4" type="Node" parent="."]
+
+[node name="Node_E_S" parent="." instance=ExtResource("5_dv5am")]
+script = ExtResource("6_o6x6m")
+
+[connection signal="area_entered" from="BackgroundBlue/Area2D_D_B" to="BackgroundBlue/Area2D_D_B" method="_on_area_entered"]

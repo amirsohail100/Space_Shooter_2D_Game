@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpglwxvu0mkpe"]
+
+[ext_resource type="Script" uid="uid://bavig2fuw21du" path="res://player_L/game 5/player1_5/game_p_1.gd" id="1_pjh36"]
+[ext_resource type="Texture2D" uid="uid://dcn66rvw4vhys" path="res://assete/pixel_ship_blue.png" id="2_b6ph4"]
+
+[node name="Game_P1" type="Node2D"]
+script = ExtResource("1_pjh36")
+
+[node name="Area2D_P1" type="Area2D" parent="."]
+
+[node name="PixelShipBlue" type="Sprite2D" parent="Area2D_P1"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_b6ph4")
+
+[node name="Camera2D" type="Camera2D" parent="Area2D_P1"]
+zoom = Vector2(1.2, 1.2)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_P1"]
+polygon = PackedVector2Array(0, -14, -4, -14, -4, -2, -8, -2, -8, 6, -16, 6, -16, 14, -4, 14, -4, 18, 4, 18, 4, 14, 16, 14, 16, 6, 8, 6, 8, -2, 4, -2, 4, -14)

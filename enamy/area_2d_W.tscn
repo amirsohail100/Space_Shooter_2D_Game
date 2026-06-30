@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b215ammb1xx7u"]
+
+[ext_resource type="Script" uid="uid://chy564u5iebkr" path="res://enamy/area_2d_w.gd" id="1_h2kx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cevdq"]
+size = Vector2(22, 37)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_h2kx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cevdq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

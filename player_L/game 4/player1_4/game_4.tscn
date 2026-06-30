@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://sanx8eukeg4h"]
+
+[ext_resource type="Texture2D" uid="uid://c6trwqqs4nci4" path="res://assete/background-purple.png" id="1_jt2ai"]
+[ext_resource type="PackedScene" uid="uid://c7qorwu8pobki" path="res://player_L/game 4/player1_4/game_p_1.tscn" id="2_nytew"]
+[ext_resource type="PackedScene" uid="uid://c5dre4u5vetmq" path="res://player_L/game 4/player1_4/game_p_2.tscn" id="3_rervm"]
+[ext_resource type="Texture2D" uid="uid://bgiy3g4pptdvl" path="res://assete/horizontal_bar_blue.png" id="4_v37jp"]
+[ext_resource type="Script" uid="uid://bsb85wacjjrg4" path="res://player_L/game 4/player1_4/area_2d_b_w_br.gd" id="4_vj4mn"]
+[ext_resource type="PackedScene" uid="uid://ck21cp8tbb34l" path="res://player_L/game 4/player1_4/node_e_s_B.tscn" id="5_1udck"]
+[ext_resource type="Script" uid="uid://bkt5x6h7kfx78" path="res://player_L/game 4/player1_4/node_e_s_b.gd" id="6_opan7"]
+[ext_resource type="Script" uid="uid://ohhbkjbtmt4e" path="res://player_L/game 4/player1_4/node_e_s_R.gd" id="7_opan7"]
+[ext_resource type="Texture2D" uid="uid://bia1h1802xi1h" path="res://assete/pixel_laser_red.png" id="9_vj4mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0skf"]
+size = Vector2(9, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aut6"]
+size = Vector2(400, 8)
+
+[node name="Game_4" type="Node2D"]
+
+[node name="BackgroundBlue" type="Sprite2D" parent="."]
+position = Vector2(200, 300.00003)
+scale = Vector2(1, 1.5000001)
+texture = ExtResource("1_jt2ai")
+
+[node name="Game_P1" parent="." instance=ExtResource("2_nytew")]
+position = Vector2(159, 545)
+
+[node name="Game_p2" parent="." instance=ExtResource("3_rervm")]
+position = Vector2(241, 545)
+
+[node name="Area2D_B_W_BR" type="Area2D" parent="."]
+script = ExtResource("4_vj4mn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_B_W_BR"]
+shape = SubResource("RectangleShape2D_c0skf")
+
+[node name="PixelLaserRed" type="Sprite2D" parent="Area2D_B_W_BR/CollisionShape2D"]
+texture = ExtResource("9_vj4mn")
+
+[node name="Area2D_B" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_B"]
+position = Vector2(200, 495)
+shape = SubResource("RectangleShape2D_1aut6")
+
+[node name="HorizontalBarBlue1" type="Sprite2D" parent="Area2D_B"]
+position = Vector2(200, 495)
+scale = Vector2(3.0769231, 0.799997)
+texture = ExtResource("4_v37jp")
+
+[node name="Node_MO" type="Node" parent="."]
+
+[node name="Node_AM4" type="Node" parent="."]
+
+[node name="Node_E_S" parent="." instance=ExtResource("5_1udck")]
+script = ExtResource("6_opan7")
+
+[node name="Node_E_S2" parent="." instance=ExtResource("5_1udck")]
+script = ExtResource("7_opan7")
+
+[connection signal="area_entered" from="Area2D_B_W_BR" to="Area2D_B_W_BR" method="_on_area_entered"]

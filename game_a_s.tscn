@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk5rkaqslnylf"]
+
+[ext_resource type="Script" uid="uid://d0ahyrs8ckkv8" path="res://enamy/game_a_s.gd" id="1_f3ijj"]
+
+[node name="Game_A_S" type="Node2D"]
+script = ExtResource("1_f3ijj")

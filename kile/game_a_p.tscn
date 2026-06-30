@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu8w7xbynhx0j"]
+
+[ext_resource type="Texture2D" uid="uid://dxyfaw8c3umy3" path="res://assete/pixel_ship_red.png" id="1_28pho"]
+[ext_resource type="Script" uid="uid://cdx6k3bedl7p7" path="res://kile/game_a_p.gd" id="1_qcbkc"]
+
+[node name="Area2D_p_E" type="Area2D"]
+script = ExtResource("1_qcbkc")
+
+[node name="ShipRedStroked" type="Sprite2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_28pho")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 15, 16, -9, -16, -9)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
