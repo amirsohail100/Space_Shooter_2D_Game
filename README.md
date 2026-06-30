@@ -46,7 +46,7 @@ A thrilling 2D space arcade shooter game built using the **Godot Engine**. Navig
 1. Download and install [Godot Engine](https://godotengine.org/).
 2. Clone this repository:
    ```bash
-   git clone [https://github.com/your-username/space-shooter-2d.git](https://github.com/your-username/space-shooter-2d.git)
+   git clone [https://github.com/amirsohail100/Space_Shooter_2D_Game.git](https://github.com/amirsohail100/Space_Shooter_2D_Game.git)
    ```
 
 🎸 [Brand/Model] Guitar for Sale! Excellent condition, well-maintained, and plays beautifully. Low action (easy to play) with a rich, warm tone. Perfect for beginners and pros alike. Comes with [Bag/Accessory]. Price: [ $10 ] | DM for details!
