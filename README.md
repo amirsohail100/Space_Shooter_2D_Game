@@ -18,7 +18,7 @@ A thrilling 2D space arcade shooter game built using the **Godot Engine**. Navig
 
 ### 🖥️ Game Menus
 
-|                 Main Menu                 |       Level Selection / Start Menu       |
+|          Main Menu / Start Menu           |       Level Selection / Start Menu       |
 | :---------------------------------------: | :--------------------------------------: |
 | ![Start Menu](screenshots/start_menu.png) | ![Level Menu](screenshots/main_menu.png) |
 
